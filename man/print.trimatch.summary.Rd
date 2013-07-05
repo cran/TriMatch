@@ -1,0 +1,20 @@
+\name{print.trimatch.summary}
+\alias{print.trimatch.summary}
+\title{Prints the results of \code{\link{summary.triangle.matches}}.}
+\usage{
+  \method{print}{trimatch.summary} (x, ...)
+}
+\arguments{
+  \item{x}{results of
+  \code{\link{summary.triangle.matches}}.}
+
+  \item{...}{multiple results of
+  \code{\link{summary.triangle.matches}}. These must be
+  named. For example, \code{"Method 1" = summary(tmath,
+  outcome)}.}
+}
+\description{
+  This is an S3 generic function to print the results of
+  \code{\link{summary.triangle.matches}}.
+}
+
