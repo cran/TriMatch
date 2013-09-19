@@ -1,5 +1,5 @@
 utils::globalVariables(c('Treatment','Covariate','Mean','Strata','ymin','ymax',
-						 '..count..','ID'))
+						 '..count..','ID','describeBy','cstrata.psa','cv.trans.psa'))
 
 #' Balance plot for the given covariate.
 #'
@@ -148,7 +148,6 @@ balance.plot <- function(x, covar, model,
 				geom_line(data=df, aes(y=Mean, group=Strata)) +
 				geom_errorbar(data=df, aes(ymin=ymin, ymax=ymax), color='green', width=.5)
 		} else { #Categorical varaible
-			require(scales)
 			p <- p + geom_bar(aes(fill=factor(Covariate), y=(..count..)/sum(..count..)), 
 							  position='fill')  +
 				scale_fill_hue(label) + ylab('Percent') +
@@ -223,10 +222,10 @@ summary.balance.plots <- function(object, ...) {
 			Covariate = names(object)[i],
 			Friedman = f$statistic,
 			Friedman.p = f$p.value,
-			Friedman.sig = TriMatch:::star(f$p.value),
+			Friedman.sig = star(f$p.value),
 			rmANOVA = ifelse(is.null(a), NA, a[[1]]$F),
 			rmANOVA.p = ifelse(is.null(a), NA, a[[1]]$p),
-			rmANOVA.sig = TriMatch:::star(ifelse(is.null(a), NA, a[[1]]$p)),
+			rmANOVA.sig = star(ifelse(is.null(a), NA, a[[1]]$p)),
 			stringsAsFactors=FALSE
 		))
 	}

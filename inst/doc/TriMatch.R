@@ -4,6 +4,9 @@
 ### code chunk number 1: setup
 ###################################################
 require(TriMatch)
+require(reshape2)
+require(PSAgraphics)
+require(psych)
 data(tutoring)
 options(digits=3)
 options(width=80)
@@ -11,19 +14,19 @@ options(continue="  ")
 
 
 ###################################################
-### code chunk number 2: TriMatch.Rnw:80-81
+### code chunk number 2: TriMatch.Rnw:83-84
 ###################################################
 names(tutoring)
 
 
 ###################################################
-### code chunk number 3: TriMatch.Rnw:86-87
+### code chunk number 3: TriMatch.Rnw:89-90
 ###################################################
 table(tutoring$treat, tutoring$Course, useNA="ifany")
 
 
 ###################################################
-### code chunk number 4: TriMatch.Rnw:92-95
+### code chunk number 4: TriMatch.Rnw:95-98
 ###################################################
 formu <- ~ Gender + Ethnicity + Military + ESL + EdMother + EdFather + 
 Age + Employment + Income + Transfer + GPA
@@ -31,26 +34,26 @@ tutoring.tpsa <- trips(tutoring, tutoring$treat, formu)
 
 
 ###################################################
-### code chunk number 5: TriMatch.Rnw:100-101 (eval = FALSE)
+### code chunk number 5: TriMatch.Rnw:103-104 (eval = FALSE)
 ###################################################
 ## plot(tutoring.tpsa)
 
 
 ###################################################
-### code chunk number 6: TriMatch.Rnw:106-107
+### code chunk number 6: TriMatch.Rnw:109-110
 ###################################################
 tutoring.matched <- trimatch(tutoring.tpsa, exact=tutoring[,c("Course")]) 
 
 
 ###################################################
-### code chunk number 7: TriMatch.Rnw:112-114
+### code chunk number 7: TriMatch.Rnw:115-117
 ###################################################
 tutoring.matched.caliper <- trimatch(tutoring.tpsa, 
 exact=tutoring[,c("Course")], method=NULL)
 
 
 ###################################################
-### code chunk number 8: TriMatch.Rnw:119-124
+### code chunk number 8: TriMatch.Rnw:122-127
 ###################################################
 tutoring.matched.2to1 <- trimatch(tutoring.tpsa, 
 exact=tutoring[,c("Course")], method=OneToN, M1=2, M2=1)
@@ -66,25 +69,25 @@ print(plot(tutoring.matched, rows=c(50), line.alpha=1, draw.segments=TRUE))
 
 
 ###################################################
-### code chunk number 10: TriMatch.Rnw:144-145
+### code chunk number 10: TriMatch.Rnw:147-148
 ###################################################
 summary(unmatched(tutoring.matched))
 
 
 ###################################################
-### code chunk number 11: TriMatch.Rnw:148-149
+### code chunk number 11: TriMatch.Rnw:151-152
 ###################################################
 summary(unmatched(tutoring.matched.caliper))
 
 
 ###################################################
-### code chunk number 12: TriMatch.Rnw:152-153
+### code chunk number 12: TriMatch.Rnw:155-156
 ###################################################
 summary(unmatched(tutoring.matched.2to1))
 
 
 ###################################################
-### code chunk number 13: TriMatch.Rnw:156-157
+### code chunk number 13: TriMatch.Rnw:159-160
 ###################################################
 summary(unmatched(tutoring.matched.3to2))
 
@@ -104,7 +107,7 @@ print(plot(bplots, cols=3, byrow=FALSE))
 
 
 ###################################################
-### code chunk number 16: TriMatch.Rnw:195-198
+### code chunk number 16: TriMatch.Rnw:198-201
 ###################################################
 matched.out <- merge(tutoring.matched, tutoring$Grade)
 names(matched.out)
@@ -112,7 +115,7 @@ head(matched.out)
 
 
 ###################################################
-### code chunk number 17: TriMatch.Rnw:203-207
+### code chunk number 17: TriMatch.Rnw:206-210
 ###################################################
 s1 <- summary(tutoring.matched, tutoring$Grade)
 names(s1)
@@ -121,7 +124,7 @@ s1$t.tests
 
 
 ###################################################
-### code chunk number 18: TriMatch.Rnw:212-217
+### code chunk number 18: TriMatch.Rnw:215-220
 ###################################################
 s2 <- summary(tutoring.matched.caliper, tutoring$Grade)
 s3 <- summary(tutoring.matched.2to1, tutoring$Grade)
@@ -163,13 +166,13 @@ RACE3, beltuse, educate, marital, SREGION, POVSTALB, HSQACCWT, TOTALEXP))
 
 
 ###################################################
-### code chunk number 22: TriMatch.Rnw:272-273
+### code chunk number 22: TriMatch.Rnw:275-276
 ###################################################
 nmes <- na.omit(nmes)
 
 
 ###################################################
-### code chunk number 23: TriMatch.Rnw:278-286
+### code chunk number 23: TriMatch.Rnw:281-289
 ###################################################
 nmes$smoke <- factor(nmes$smoke, levels=c(0,1,2), 
 labels=c("Never","Smoker","Former"))
@@ -206,7 +209,7 @@ print(ggplot(nmes[nmes$smoke != "Never",],
 
 
 ###################################################
-### code chunk number 25: TriMatch.Rnw:321-324
+### code chunk number 25: TriMatch.Rnw:324-327
 ###################################################
 nmes$LastAge5 <- cut(nmes$LASTAGE, 
 breaks=quantile(nmes$LASTAGE, probs=seq(0,1,1/5)),
@@ -214,14 +217,14 @@ include.lowest=TRUE, orderd_result=TRUE)
 
 
 ###################################################
-### code chunk number 26: TriMatch.Rnw:329-331
+### code chunk number 26: TriMatch.Rnw:332-334
 ###################################################
 formu <- ~ LASTAGE + MALE + RACE3 + beltuse + educate + marital + 
 SREGION + POVSTALB
 
 
 ###################################################
-### code chunk number 27: TriMatch.Rnw:336-338
+### code chunk number 27: TriMatch.Rnw:339-341
 ###################################################
 tpsa.smoke <- trips(nmes, nmes$smoke, formu)
 tpsa.packyears <- trips(nmes, nmes$smoke2, formu)
@@ -240,7 +243,7 @@ print(p.packyears, vp=vplayout(1,2))
 
 
 ###################################################
-### code chunk number 29: TriMatch.Rnw:359-363
+### code chunk number 29: TriMatch.Rnw:362-366
 ###################################################
 tmatch.smoke <- trimatch(tpsa.smoke, 
 exact=nmes[,c("LastAge5","MALE","RACE3")])
@@ -249,7 +252,7 @@ exact=nmes[,c("LastAge5","MALE","RACE3")])
 
 
 ###################################################
-### code chunk number 30: TriMatch.Rnw:368-370
+### code chunk number 30: TriMatch.Rnw:371-373
 ###################################################
 summary(unmatched(tmatch.smoke))
 summary(unmatched(tmatch.packyears))
@@ -280,17 +283,17 @@ print(boxdiff.plot(tmatch.packyears, nmes$LogTotalExp, ordering=c("Heavy","Moder
 
 
 ###################################################
-### code chunk number 33: TriMatch.Rnw:413-418
+### code chunk number 33: TriMatch.Rnw:416-421
 ###################################################
-sum.smoke <- summary(tmatch.smoke, nmes$LogTotalExp, 
-ordering=c("Smoker","Former","Never"))
-sum.packyears <- summary(tmatch.packyears, nmes$LogTotalExp, 
-ordering=c("Heavy","Moderate","Never"))
-print("Current Smoking Status"=sum.smoke, "Smoking Frequency"=sum.packyears)
+	sum.smoke <- summary(tmatch.smoke, nmes$LogTotalExp, 
+	ordering=c("Smoker","Former","Never"))
+	sum.packyears <- summary(tmatch.packyears, nmes$LogTotalExp, 
+	ordering=c("Heavy","Moderate","Never"))
+	print("Current Smoking Status"=sum.smoke, "Smoking Frequency"=sum.packyears)
 
 
 ###################################################
-### code chunk number 34: TriMatch.Rnw:421-423
+### code chunk number 34: TriMatch.Rnw:424-426
 ###################################################
 sum.smoke$t.tests
 sum.packyears$t.test

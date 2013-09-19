@@ -5,13 +5,13 @@ Type: Package
 Author: Jason Bryer <jason@bryer.org>
 Maintainer: Jason Bryer <jason@bryer.org>
 Description: Propensity score matching for non-binary treatments.
-Version: 0.9
+Version: 0.9.1
 URL: http://jason.bryer.org/TriMatch, http://github.com/jbryer/TriMatch
 BugReports: https://github.com/jbryer/TriMatch/issues
-Depends: ggplot2, psych, reshape2, stats, ez, PSAgraphics, compiler,
-        scales, R (>= 3.0)
+Depends: ggplot2, scales, reshape2, ez, R (>= 3.0)
+Imports: psych, stats, PSAgraphics, compiler
 Suggests: MASS, gridExtra, xtable
-Date: 2013-01-02
+Date: 2013-09-19
 Collate: 'merge.triangle.matches.R' 'plot.distances.R'
         'plot.parallel.R' 'plot.triangle.matches.R'
         'plot.triangle.psa.R' 'plot.utils.R' 'triangle.match.R'
@@ -20,7 +20,7 @@ Collate: 'merge.triangle.matches.R' 'plot.distances.R'
         'plot.boxdiff.R' 'merge.triangle.psa.R' 'unmatched.R'
         'as.data.frame.list.R' 'summary.triangle.psa.R'
         'summary.triangle.matches.R' 'star.R' 'trimatch.apply2.R'
-Packaged: 2013-07-05 17:36:35 UTC; jbryer
+Packaged: 2013-09-19 21:58:05 UTC; jbryer
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-07-05 20:50:20
+Date/Publication: 2013-09-20 07:55:25
