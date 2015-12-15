@@ -17,8 +17,10 @@
 #' @import ggplot2
 #' @import ez
 #' @import reshape2
-#' @import scales
-#' @import grid
+#' @importFrom graphics plot
+#' @importFrom scales percent
+#' @importFrom grid grob editGrob vpPath viewport vpTree grid.layout getGrob gTree
+#'             grobWidth grobHeight pushViewport grid.draw upViewport grid.newpage
 NA
 
 #' Results from a study examining the effects of tutoring services on course grades.

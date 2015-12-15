@@ -5,14 +5,15 @@ Type: Package
 Author: Jason Bryer <jason@bryer.org>
 Maintainer: Jason Bryer <jason@bryer.org>
 Description: Propensity score matching for non-binary treatments.
-Version: 0.9.4
+Version: 0.9.6
+Date: 2015-12-14
 URL: http://jason.bryer.org/TriMatch, http://github.com/jbryer/TriMatch
 BugReports: https://github.com/jbryer/TriMatch/issues
 Depends: ggplot2, scales, reshape2, ez, R (>= 3.0)
 Imports: psych, stats, PSAgraphics, compiler, grid, gridExtra
 Suggests: MASS, xtable
-Date: 2013-09-19
-Packaged: 2015-04-07 19:24:24 UTC; jbryer
+RoxygenNote: 5.0.1
 NeedsCompilation: no
+Packaged: 2015-12-15 12:51:03 UTC; jbryer
 Repository: CRAN
-Date/Publication: 2015-04-08 00:41:04
+Date/Publication: 2015-12-15 16:55:36

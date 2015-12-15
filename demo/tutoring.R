@@ -1,4 +1,5 @@
 library(TriMatch)
+library(grid)
 data(tutoring)
 
 names(tutoring)
