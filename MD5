@@ -1,6 +1,6 @@
-3f9dead0c3a09b29ed5b0235cd161657 *DESCRIPTION
-07abfd03bd925824fc1b9d2e3af7cd60 *NAMESPACE
-4c1f0d1ccd4b18f035c307473ca6e4b8 *NEWS
+8aa201e380b5e76e8780b4b3e181a21d *DESCRIPTION
+2c26a4e008c71c0687002ade0a6da06c *NAMESPACE
+a4a5fb48639b07ad96a8b593a4d0630d *NEWS
 b4243a5e4144edc0284750c0224041c1 *R/TriMatch-package.R
 6a6ac45f7d554ce65305e7011674f7c7 *R/as.data.frame.list.R
 6786b8d558c8e959aa78285a51871eeb *R/covariateBalance.R
@@ -13,8 +13,8 @@ abd075c7b66312b905bb790e3877eb76 *R/plot.distances.R
 a788d41ba7f45a381dd0bbaffb0791d1 *R/plot.multibalance.R
 f538ea689e0118e23c93ed1353522cca *R/plot.parallel.R
 51046e5b9f78e444026d49588539a49b *R/plot.triangle.matches.R
-02882792b526ffe0b70a37cc53f75485 *R/plot.triangle.psa.R
-5fb66c974ef2dc8b2129fafc7dacc3d2 *R/plot.utils.R
+2dc76fcd40d2c4e128404cb750e475e4 *R/plot.triangle.psa.R
+07830413548e872e263355450912885e *R/plot.utils.R
 3b77d0080b7ac4e642d0a5dd27623685 *R/star.R
 90a6244bb3588e97e187ae08874f9aac *R/summary.triangle.matches.R
 9c166844db1949a5e61f0490eed55645 *R/summary.triangle.psa.R
@@ -46,7 +46,7 @@ ddf595b13f413a397262d9a85ddabd29 *man/parallel.plot.Rd
 9eaeb145feb090e5a3949e6e0ef4df72 *man/perpPt.Rd
 421e0276867c30cae8d4c4a66e49ca62 *man/plot.balance.plots.Rd
 21f22e054bd23d007ec6ff2759d8f0b0 *man/plot.triangle.matches.Rd
-6058a2724c53aebd997add10953f9433 *man/plot.triangle.psa.Rd
+8f02c97b163e593901301ea1ccf93150 *man/plot.triangle.psa.Rd
 53f814dd89ef15c0a029f78d75e00409 *man/print.balance.plots.Rd
 4e34c87b689bb8c4d21b3d7e7870b7f5 *man/print.triangle.plot.Rd
 834d51621baecae6b7f949cae6519d7f *man/print.trimatch.summary.Rd
