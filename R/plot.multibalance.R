@@ -1,19 +1,24 @@
 utils::globalVariables(c('value','covariate','variable','model','group'))
 
-#' Multiple covariate blance assessment plot.
+#' Multiple covariate balance assessment plot.
 #' 
 #' A graphic based upon \code{\link{cv.bal.psa}} function in the \code{PSAgraphics}
-#' package. This graphic plots the effect sizes for multiple covariated before and
-#' after propensity score andjustement.
+#' package. This graphic plots the effect sizes for multiple covariates before and
+#' after propensity score adjustment.
 #' 
 #' @param tpsa results of \code{\link{trips}}.
+#' @param tmatch results of \code{\link{trimatch}}.
 #' @param grid if TRUE, then a grid of three plots for each model will be displayed.
 #' @param cols character vector of covariates (i.e. column names) from the original 
 #'        data to include in the plot. By default all covariates used in the
 #'        logistic regression model are used.
 #' @return a \code{ggplot2} figure.
 #' @export
-multibalance.plot <- function(tpsa, grid=TRUE, cols) {
+multibalance.plot <- function(tpsa, tmatch, grid=TRUE, cols) {
+	if(!missing(tmatch)) {
+		tpsa <- attr(results, 'triangle.psa', exact=TRUE)
+	}
+	
 	covs <- attr(tpsa, 'data')
 	m1 <- attr(tpsa, 'model1')
 	if(missing(cols)) {
@@ -37,6 +42,14 @@ multibalance.plot <- function(tpsa, grid=TRUE, cols) {
 	}
 	
 	tpsa2 <- cbind(tpsa, (covs))
+	
+	if(!missing(tmatch)) {
+		rows <- c(tmatch$Control, tmatch$Treat1, tmatch$Treat2)
+		tpsa2 <- tpsa2[rows,]
+	} else {
+		warning('Balance estimates may include observations not in the matched dataset. It is 
+				recommended that the tmatch parameter is specified instead.')
+	}
 	
 	results <- data.frame(covariate=character(), model=integer(), unadjusted=numeric(),
 						  adjusted=numeric(), stringsAsFactors=FALSE)

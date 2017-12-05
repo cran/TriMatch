@@ -12,7 +12,7 @@ balance.plot(x, covar, model, nstrata = attr(attr(tmatch, "triangle.psa"),
 \arguments{
 \item{x}{results from \code{\link{trimatch}}.}
 
-\item{covar}{vector of the covaraite to check balance of.}
+\item{covar}{vector of the covariate to check balance of.}
 
 \item{model}{an integer between 1 and 3 indicating from which model the 
 propensity scores will be used.}
@@ -53,4 +53,3 @@ and stored as an attribute to the returned object named \code{friedman}. If
 a continuous covariate a repeated measures ANOVA will also be performed, printed,
 and returned as an attribute named \code{rmanova}.
 }
-
