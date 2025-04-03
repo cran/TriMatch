@@ -1,3 +1,8 @@
+TriMatch 1.0.0
+=========
+
+* Fix documentation issue with cross referencing functions per CRAN checks.
+
 TriMatch 0.9.9
 =========
 
