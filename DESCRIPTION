@@ -1,8 +1,8 @@
 Type: Package
 Package: TriMatch
 Title: Propensity Score Matching of Non-Binary Treatments
-Version: 1.0.0
-Date: 2025-04-03
+Version: 1.0.1
+Date: 2025-12-08
 Authors@R: 
     person("Jason", "Bryer", , "jason@bryer.org", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2454-0402"))
@@ -11,16 +11,16 @@ License: GPL (>= 2)
 URL: https://jbryer.github.io/TriMatch/,
         https://github.com/jbryer/TriMatch/
 BugReports: https://github.com/jbryer/TriMatch/issues/
-Depends: ez, ggplot2, R (>= 3.0), reshape2, scales
-Imports: compiler, grid, gridExtra, PSAgraphics, psych, randomForest,
-        stats
+Depends: ggplot2, R (>= 3.0), reshape2, scales
+Imports: car, compiler, grid, gridExtra, plyr, PSAgraphics, psych,
+        randomForest, stats, stringr
 Suggests: bookdown, knitr, MASS, rmarkdown, xtable
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2025-04-03 20:06:56 UTC; jbryer
-Author: Jason Bryer [aut, cre] (<https://orcid.org/0000-0002-2454-0402>)
+Packaged: 2025-12-08 01:37:59 UTC; jasonbryer
+Author: Jason Bryer [aut, cre] (ORCID: <https://orcid.org/0000-0002-2454-0402>)
 Maintainer: Jason Bryer <jason@bryer.org>
 Repository: CRAN
-Date/Publication: 2025-04-03 20:40:06 UTC
+Date/Publication: 2025-12-08 06:30:17 UTC

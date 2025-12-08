@@ -166,14 +166,12 @@ boxdiff.plot(tmatch.smoke, nmes$LogTotalExp, ordering=c("Smoker","Former","Never
 boxdiff.plot(tmatch.packyears, nmes$LogTotalExp, ordering=c("Heavy","Moderate","Never")) +
 	ggtitle("Treatment Variable: Lifetime Smoking Frequency")
 
-## -----------------------------------------------------------------------------
-sum.smoke <- summary(tmatch.smoke, nmes$LogTotalExp, 
-ordering=c("Smoker","Former","Never"))
-sum.packyears <- summary(tmatch.packyears, nmes$LogTotalExp, 
-ordering=c("Heavy","Moderate","Never"))
-print("Current Smoking Status" = sum.smoke, "Smoking Frequency" = sum.packyears)
+## ----eval=FALSE---------------------------------------------------------------
+# sum.smoke <- summary(tmatch.smoke, nmes$LogTotalExp, ordering=c("Smoker","Former","Never"))
+# sum.packyears <- summary(tmatch.packyears, nmes$LogTotalExp, ordering=c("Heavy","Moderate","Never"))
+# print("Current Smoking Status" = sum.smoke, "Smoking Frequency" = sum.packyears)
 
-## -----------------------------------------------------------------------------
-sum.smoke$t.tests
-sum.packyears$t.test
+## ----eval=FALSE---------------------------------------------------------------
+# sum.smoke$t.tests
+# sum.packyears$t.test
 
