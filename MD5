@@ -1,6 +1,6 @@
-fb8a125e129acfd8931cd1fec3c7a901 *DESCRIPTION
+75e91ac985fe9b9b8c0d183777b38f6c *DESCRIPTION
 7d3270cbfa896ead87fae109aa99d4de *NAMESPACE
-46cb0c97143f6f882977c0630bfd9dab *NEWS.md
+eee2e8e1125e488d49bf5762af184ad5 *NEWS.md
 7da566f6d5bbcc84d271f53dcd2bdfa4 *R/TriMatch-package.R
 52702fbfe72ad60f2a26bcd7ce35aeaf *R/as.data.frame.list.R
 16893728cb306cde4fde0dc8c2f9cae7 *R/covariateBalance.R
@@ -24,7 +24,7 @@ f0e908dd79811d169e384ff2339062ac *R/plot.loess.R
 e80eda630f0fabbe77fdcdf495742f7e *R/triangle.psa.R
 b22dce9004bc1e8b5ec9fa10de3f5c18 *R/trimatch.apply2.R
 08f595050dd0c7bc77e5ee012d2a04fe *R/unmatched.R
-d6634195f1da096be6b9212202b23494 *build/vignette.rds
+49987d06855c9dfb901cb5defc8dda42 *build/vignette.rds
 be0ed0ab3d424ce24355692c7a5bdaa7 *data/nmes.rda
 f21b87a35a0af5de7aa7976a922aa7fc *data/tutoring.rda
 c157fdbea34202b4e1b2dc1b8d615c37 *demo/00Index
@@ -32,8 +32,8 @@ d8c9807c0d5b82eb6515e4a9d27e4ca3 *demo/nmes.R
 239e4a127a145c269a16c8e32f276ecc *demo/one-to-one-to-one.R
 88893ed06cf00e99cb21124a571aa960 *demo/tutoring.R
 cc9ee08b5fd191c7686e3ccd90dffb09 *inst/doc/TriMatch.R
-be28096f60ca83b8d679d2ec1421bbdd *inst/doc/TriMatch.Rmd
-109fdd126b5f886a28ef389b7713fb29 *inst/doc/TriMatch.pdf
+6a98e5d91ef7e8733ea74458af7d548e *inst/doc/TriMatch.Rmd
+3172eef714c40fa6135bd78b0a4059f6 *inst/doc/TriMatch.pdf
 38cfe934549bd6e3dec123dd22bd5592 *man/OneToN.Rd
 752f3411e30bb65588b2e308d0b7490d *man/TriMatch-package.Rd
 d0eec5f4d36eac34822be463bc99583b *man/as.data.frame.list.Rd
@@ -72,5 +72,5 @@ c28f44f2ce25f619ad4365085851f1f4 *man/trimatch.Rd
 969d4b05a42bb877e739f0954390776b *man/trips.Rd
 502690c93bb097f8f1fae1a5d98024ed *man/tutoring.Rd
 5bd8d82c9bce38f6258e5f7a38110b0f *man/unmatched.Rd
-be28096f60ca83b8d679d2ec1421bbdd *vignettes/TriMatch.Rmd
-702191a1511bd31f567d2f02ebc62add *vignettes/references.bib
+6a98e5d91ef7e8733ea74458af7d548e *vignettes/TriMatch.Rmd
+13c75d076a2ecdf1c4b62f4bfd7f1cf5 *vignettes/references.bib
